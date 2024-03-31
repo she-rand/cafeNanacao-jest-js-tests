@@ -7,11 +7,13 @@ describe("Operaciones CRUD de cafes", () => {
         const status =response.statusCode;
         const cafeList=response._body;
         const size=cafeList.length
-        console.log(response._body)
-        console.log(size);
+       
         expect(status).toBe(200);
+        //tipo de dato recibido es un arreglo
         expect(cafeList).toBeInstanceOf(Array);
+        //al menos un elemento en el array
         expect(size).toBeGreaterThan(1);
+         //elemento de tipo object
         expect(cafeList[0]).toBeInstanceOf(Object);
     });
 
